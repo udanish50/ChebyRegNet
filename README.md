@@ -35,6 +35,5 @@ If you find ChebyRegNet useful in your research, please consider citing:
 @article{danish2023chebyregnet,
   title={ChebyRegNet: An Unsupervised Deep Learning Technique for Deformable Medical Image Registration},
   author={Danish, Muhammad Umair and Noorchenarboo, Mohammad and Narayan, Apurva and Grolinger, Katarina},
-  journal={Journal of Advanced Medical Imaging},
   year={2023}
 }
