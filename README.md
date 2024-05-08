@@ -1,18 +1,40 @@
-**Please use ChebyShevTrain.py for training model.**
-__This is a Python code that performs registration of medical images using a technique ChebyShev Conv HyperNet. The code imports several libraries such as os, numpy, neurite, voxelmorph, tensorflow, nibabel, and others to perform various tasks such as reading and processing image files, defining and training deep learning models, and computing metrics for evaluating the performance of the model.__
+# ChebyRegNet: An Unsupervised Deep Learning Technique for Deformable Medical Image Registration
 
-The code first defines a function to read NIfTI image files and load the image data. It then splits the image data into training, validation, and test sets. The next function defines a generator that selects random pairs of images for each training iteration to align. The generator also computes the gradient loss on the predicted deformation.
+## Overview
+This repository contains the implementation and supporting material for the paper "ChebyRegNet: An Unsupervised Deep Learning Technique for Deformable Medical Image Registration". Our approach introduces a novel deep learning framework that utilizes Chebyshev polynomials to enhance registration accuracy across diverse medical imaging modalities.
 
-The a Chebyshev hypernetwork model for registration and compiles it using the Adam optimizer with a learning rate of 1e-4. The model is trained using the hypermorph generator for 1500 epochs and 100 steps per epoch.
+## Publication
+- **Authors**: Muhammad Umair Danish, Mohammad Noorchenarboo, Apurva Narayan, Katarina Grolinger
+- **Affiliations**: Department of Electrical and Computer Engineering and Department of Computer Science, Western University, London, Ontario, Canada
+- **Contact**: [mdanish3@uwo.ca](mailto:mdanish3@uwo.ca), [kgroling@uwo.ca](mailto:kgroling@uwo.ca)
 
-Finally,computes and prints the dice score and target registration error for each image in the test set using the computed slices from the model. These metrics are commonly used to evaluate the accuracy of image registration algorithms.
+## Abstract
+ChebyRegNet leverages Chebyshev polynomials within a hypernetwork structure to address the high error rates commonly seen in multi-modality medical image registrations. This innovative architecture not only enhances the precision of deformable image registration but also maintains robustness against variations in imaging conditions.
 
-Loss function and base network can also be refered to voxelmorph.
-To use the VoxelMorph library, either clone this repository and install the requirements listed in setup.py or install directly with pip.
+## Key Contributions
+- Introduction of Chebyshev polynomials in a deep learning model to enhance medical image registration accuracy.
+- Development of a Feature Extraction Network that processes deep features for the Chebyshev HyperNetwork.
+- Empirical validation shows improved registration accuracy compared to traditional methods like VoxelMorph and HyperMorph, especially in challenging multi-modality scenarios.
 
-pip install voxelmorph
-VoxelMorph have several voxelmorph tutorials
-the main VoxelMorph tutorial explains VoxelMorph and Learning-based Registration.
-a tutorial on training vxm on OASIS data, which we processed and released for free for HyperMorph.
-an additional small tutorial on warping annotations together with images
-another tutorial on template (atlas) construction with VoxelMorph.
+## Repository Structure
+- `src/`: Contains all source code used for implementing ChebyRegNet.
+- `data/`: Sample data and links to the IXI dataset used for training and validation.
+- `models/`: Pre-trained models and weights.
+- `notebooks/`: Jupyter notebooks for demonstration of the methods and visualization of results.
+- `results/`: Detailed results and comparative analysis with other state-of-the-art methods.
+
+## Setup and Running
+Instructions for setting up the environment, installing dependencies, and running the code are provided in the `setup.md` file.
+
+## Usage
+To replicate the results or to use ChebyRegNet on new datasets, follow the guidelines in the `usage.md` file located in the `notebooks/` directory.
+
+## Citing
+If you find ChebyRegNet useful in your research, please consider citing:
+```bibtex
+@article{danish2023chebyregnet,
+  title={ChebyRegNet: An Unsupervised Deep Learning Technique for Deformable Medical Image Registration},
+  author={Danish, Muhammad Umair and Noorchenarboo, Mohammad and Narayan, Apurva and Grolinger, Katarina},
+  journal={Journal of Advanced Medical Imaging},
+  year={2023}
+}
