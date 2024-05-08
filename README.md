@@ -6,7 +6,7 @@ This repository contains the implementation and supporting material for the pape
 ## Publication
 - **Authors**: Muhammad Umair Danish, Mohammad Noorchenarboo, Apurva Narayan, Katarina Grolinger
 - **Affiliations**: Department of Electrical and Computer Engineering and Department of Computer Science, Western University, London, Ontario, Canada
-- **Contact**: [mdanish3@uwo.ca](mailto:mdanish3@uwo.ca), [kgroling@uwo.ca](mailto:kgroling@uwo.ca)
+- **Contact**: [mdanish3@uwo.ca](mailto:mdanish3@uwo.ca), 
 
 ## Abstract
 ChebyRegNet leverages Chebyshev polynomials within a hypernetwork structure to address the high error rates commonly seen in multi-modality medical image registrations. This innovative architecture not only enhances the precision of deformable image registration but also maintains robustness against variations in imaging conditions.
