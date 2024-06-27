@@ -107,6 +107,25 @@ lambda_weight = hp_input
 image_loss = lambda yt, yp: vxm.losses.MSE(0.05).loss(yt, yp) * (1 - lambda_weight)
 gradient_loss = lambda yt, yp: vxm.losses.Grad('l2').loss(yt, yp) * lambda_weight
 losses = [image_loss, gradient_loss]
+
+class FeatureExtractionNetwork(tf.keras.Model):
+    def __init__(self, image_shape):
+        super(FeatureExtractionNetwork, self).__init__()
+        self.conv1 = tf.keras.layers.Conv2D(32, (3, 3), activation='relu', padding='same', input_shape=image_shape)
+        self.pool1 = tf.keras.layers.MaxPooling2D((2, 2), padding='same')
+        self.conv2 = tf.keras.layers.Conv2D(64, (3, 3), activation='relu', padding='same')
+        self.pool2 = tf.keras.layers.MaxPooling2D((2, 2), padding='same')
+        self.flatten = tf.keras.layers.Flatten()
+
+    def call(self, inputs):
+        x = self.conv1(inputs)
+        x = self.pool1(x)
+        x = self.conv2(x)
+        x = self.pool2(x)
+        return self.flatten(x)
+
+feature_extractor = FeatureExtractionNetwork(image_shape)
+
 #Model Design For Registration
 hp_input = tf.keras.Input(shape=[1])
 x = sp.ChebConv(32,
