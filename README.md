@@ -20,7 +20,6 @@ ChebyRegNet leverages Chebyshev polynomials within a hypernetwork structure to a
 - `src/`: Contains all source code used for implementing ChebyRegNet.
 - `data/`: Sample data and links to the IXI dataset used for training and validation.
 - `models/`: Pre-trained models and weights.
-- `notebooks/`: Jupyter notebooks for demonstration of the methods and visualization of results.
 - `results/`: Detailed results and comparative analysis with other state-of-the-art methods.
 
 ## Setup and Running
